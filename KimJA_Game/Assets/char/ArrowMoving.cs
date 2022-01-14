@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ArrowMoving : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D collision)
+
+    void OnCollisionEnter2D(Collision2D other)
     {
         Destroy(this.gameObject);
     }
@@ -18,7 +19,7 @@ public class ArrowMoving : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, 0.1f, 0);
+        transform.Translate(0, 25f * Time.deltaTime, 0);
 
         if (transform.position.y > 9.0f)
         {

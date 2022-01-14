@@ -23,7 +23,7 @@ public class WeaponEdit : MonoBehaviour
         if (d < r1 + r2)
         {
             GameObject director = GameObject.Find("player");
-            director.GetComponent<PlayerController>().weaponUgrade();
+            director.GetComponent<PlayerController>().WeaponUgrade();
 
             Destroy(gameObject);
         }

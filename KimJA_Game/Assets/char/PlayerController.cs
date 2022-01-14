@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
         this.delta += Time.deltaTime;
         if (this.delta > this.span)
         {
-
             this.delta = 0;
             GameObject go = Instantiate(arrowPrefab) as GameObject;
             if (weapon == 0)
@@ -37,10 +36,34 @@ public class PlayerController : MonoBehaviour
                 go1.transform.position = new Vector3(pos.x - 1, pos.y + 1, 0);
                 go2.transform.position = new Vector3(pos.x + 1, pos.y + 1, 0);
             }
+            if (weapon >= 2)
+            {
+                GameObject go1 = Instantiate(arrowPrefab) as GameObject;
+                GameObject go2 = Instantiate(arrowPrefab) as GameObject;
+                GameObject go3 = Instantiate(arrowPrefab) as GameObject;
+                GameObject go4 = Instantiate(arrowPrefab) as GameObject;
+
+                go.transform.position = new Vector3(pos.x, pos.y + 1, 0);
+                go1.transform.position = new Vector3(pos.x - 1, pos.y + 2, 0);
+                go2.transform.position = new Vector3(pos.x + 1, pos.y + 2, 0);
+                go3.transform.position = new Vector3(pos.x - 2, pos.y + 1, 0);
+                go4.transform.position = new Vector3(pos.x + 2, pos.y + 1, 0);
+            }
         }
     }
-    public void weaponUgrade()
+    public void WeaponUgrade()
     {
-        weapon = 1;
+        weapon += 1;
+    }
+    public void WeaponDown()
+    {
+        if (weapon == 0)
+        {
+            weapon = 0;
+        }
+        else
+        {
+            weapon -= 1;
+        }
     }
 }

@@ -7,8 +7,9 @@ public class ArmyMoving : MonoBehaviour
 {
     GameObject player;
     int hp = 2;
+    public int dice = 0;
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D other)
     {
         hp -= 1;
         if (hp == 0)
@@ -23,12 +24,26 @@ public class ArmyMoving : MonoBehaviour
     void Start()
     {
         this.player = GameObject.Find("player");
+        dice = Random.Range(1, 3);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, -0.1f, 0);
+        if (dice == 1)
+        {
+            transform.Translate(0, -30f * Time.deltaTime, 0);
+        }
+        else if (dice == 2)
+        {
+            transform.Translate(3f * Time.deltaTime, -30f * Time.deltaTime, 0);
+
+        }
+        else
+        {
+            transform.Translate(-3f * Time.deltaTime, -30f * Time.deltaTime, 0);
+        }
 
         if (transform.position.y < -10.0f)
         {
@@ -48,7 +63,6 @@ public class ArmyMoving : MonoBehaviour
             director.GetComponent<GameDirector>().DecreaseHp();
 
             Destroy(gameObject);
-
         }
     }
 }

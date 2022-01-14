@@ -14,27 +14,31 @@ public class GameDirector : MonoBehaviour
     int sco2 = 0; //무기 업글 소환 카운트
     public GameObject hpPackPrefeb;
     public GameObject weaponPrefab;
-    GameObject weapon;
-
-
+    public AudioClip PointSE;
+    public AudioClip DamageSE;
+    AudioSource aud;
+    GameObject timerText;
+    float time = 60.0f;
 
     void Start()
     {
+        this.aud = GetComponent<AudioSource>();
         this.hpGauge = GameObject.Find("hpGauge");
         this.score = GameObject.Find("score");
-        this.weapon = GameObject.Find("weapon");
+        this.timerText = GameObject.Find("Time");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(sco1 >= 30)
+        this.time -= Time.deltaTime;
+        if (sco1 >= 30)
         {
             int px = Random.Range(-7, 7);
             int py = Random.Range(-10, 6);
             GameObject go = Instantiate(hpPackPrefeb) as GameObject;
             go.transform.position = new Vector3(px, py, 0);
-            sco1 = 0;
+            sco1 -= 50;
         }
         
         if(sco2 >= 20)
@@ -43,7 +47,13 @@ public class GameDirector : MonoBehaviour
             int py = Random.Range(-10, 6);
             GameObject go = Instantiate(weaponPrefab) as GameObject;
             go.transform.position = new Vector3(px, py, 0);
-            sco2 = 0;
+            sco2 -= 35;
+        }
+        this.timerText.GetComponent<Text>().text = this.time.ToString("F1");
+        if(this.time <= 0)
+        {
+            this.time = 0;
+            SceneManager.LoadScene("ClearScene");
         }
     }
 
@@ -51,6 +61,9 @@ public class GameDirector : MonoBehaviour
     {
         this.hpGauge.GetComponent<Image>().fillAmount -= 0.34f;
         playerhp -= 1;
+        this.aud.PlayOneShot(this.DamageSE);
+        GameObject director = GameObject.Find("player");
+        director.GetComponent<PlayerController>().WeaponDown();
 
         if (playerhp == 0)
         {
@@ -69,9 +82,14 @@ public class GameDirector : MonoBehaviour
 
     public void PlusScore()
     {
+        this.aud.PlayOneShot(this.PointSE);
         sco += 1;
         sco1 += 1;
         sco2 += 1;
+        this.score.GetComponent<Text>().text = sco + "점";
+    }
+    public void WriteScore()
+    {
         this.score.GetComponent<Text>().text = sco + "점";
     }
 }

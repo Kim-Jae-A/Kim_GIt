@@ -4,11 +4,14 @@ ScriptsOnlyBuild:
     - ArmyGenerator
     - ArmyMoving
     - ArrowMoving
+    - DonDestroy
     - GameDirector
     - HealPack
     - MainGo
+    - MainGoVer2
     - PlayerController
     - StartButton
+    - Tjfaudgo
     - WeaponEdit
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
@@ -33,6 +36,55 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
+    Assets/ClearScene.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11264}
+    - Class: 114
+      Script: {instanceID: 11610}
+    - Class: 114
+      Script: {instanceID: 11860}
+    - Class: 114
+      Script: {instanceID: 12092}
+    - Class: 114
+      Script: {instanceID: 12288}
+    - Class: 114
+      Script: {instanceID: 12996}
+    - Class: 114
+      Script: {instanceID: 13758}
+    - Class: 114
+      Script: {instanceID: 14368}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/GameOver.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -55,17 +107,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11610}
     - Class: 114
-      Script: {instanceID: 12280}
+      Script: {instanceID: 11860}
     - Class: 114
-      Script: {instanceID: 12986}
+      Script: {instanceID: 12092}
     - Class: 114
-      Script: {instanceID: 13750}
+      Script: {instanceID: 12288}
     - Class: 114
-      Script: {instanceID: 14360}
+      Script: {instanceID: 12996}
     - Class: 114
-      Script: {instanceID: 15546}
+      Script: {instanceID: 13758}
     - Class: 114
-      Script: {instanceID: 15968}
+      Script: {instanceID: 14368}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -101,6 +153,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -114,21 +170,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11614}
     - Class: 114
-      Script: {instanceID: 11868}
+      Script: {instanceID: 11872}
     - Class: 114
-      Script: {instanceID: 12186}
+      Script: {instanceID: 12194}
     - Class: 114
-      Script: {instanceID: 12264}
+      Script: {instanceID: 12272}
     - Class: 114
-      Script: {instanceID: 12280}
+      Script: {instanceID: 12288}
     - Class: 114
-      Script: {instanceID: 12412}
+      Script: {instanceID: 12420}
     - Class: 114
-      Script: {instanceID: 12586}
+      Script: {instanceID: 12594}
     - Class: 114
-      Script: {instanceID: 13750}
+      Script: {instanceID: 12900}
     - Class: 114
-      Script: {instanceID: 14360}
+      Script: {instanceID: 13758}
+    - Class: 114
+      Script: {instanceID: 14368}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -169,15 +227,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11610}
     - Class: 114
-      Script: {instanceID: 12280}
+      Script: {instanceID: 11860}
     - Class: 114
-      Script: {instanceID: 12986}
+      Script: {instanceID: 11908}
     - Class: 114
-      Script: {instanceID: 13750}
+      Script: {instanceID: 12288}
     - Class: 114
-      Script: {instanceID: 14360}
+      Script: {instanceID: 12996}
     - Class: 114
-      Script: {instanceID: 15546}
+      Script: {instanceID: 13758}
+    - Class: 114
+      Script: {instanceID: 14368}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -212,7 +272,7 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 15968}
+      Script: {instanceID: 11828}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -370,6 +430,18 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainGoVer2
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StartButton
+  - hash:
+      serializedVersion: 2
       Hash: 61f23eada518fc812be7de124ce92bbb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -386,6 +458,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: AspectRatioFitter
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Tjfaudgo
   - hash:
       serializedVersion: 2
       Hash: 87cef3c82381dc586f6772c3e27561b6
@@ -424,6 +502,12 @@ ScriptsOnlyBuild:
     className: AnimationPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MainGo
+  - hash:
+      serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -436,13 +520,13 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 96a93f95f4ffd8dfd98842b8c361b860
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ArmyMoving
   - hash:
       serializedVersion: 2
-      Hash: 7db3439081d94d531f2a82a9d7f40176
+      Hash: 3506c71ca577631f35249a7f4bad5328
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameDirector
@@ -530,6 +614,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: RemoteTestResultSender
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DonDestroy
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
@@ -746,22 +836,11 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: StartButton
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MainGo
   platform: 5
   scenePathNames:
   - Assets/MainScene.unity
   - Assets/GameSceme.unity
   - Assets/GameOver.unity
+  - Assets/ClearScene.unity
   - Assets/tjfaudScene.unity
-  playerPath: C:/Users/rlawo/Documents/git/Unity/KimJA_Game/KimJA_Game.exe
+  playerPath: "C:/Users/rlawo/OneDrive/\uBC14\uD0D5 \uD654\uBA74/KimJA/KimJA_Game.exe"
